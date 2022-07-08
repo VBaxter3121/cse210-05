@@ -1,0 +1,80 @@
+INCOMPLETE
+
+Director
+    Video Service (Video Service)
+
+    Start Game()
+    Execute Actions()
+
+Actor
+    Text (String)
+    Font Size (Int)
+    Colour (Colour)
+    Position (Point)
+    Velocity (Point)
+
+    Get Text()
+    Get Font Size()
+    Get Colour()
+    Get Point()
+    Get Velocity()
+    Move Next()
+    Set Text()
+    Set Font Size()
+    Set Colour()
+    Set Point()
+    Set Velocity()
+
+Cast
+    Actors (Dictionary)
+
+    Add Actor()
+    Get Actor()
+    Get All Actors()
+    Get First Actor()
+    Remove Actor()
+
+Replay
+
+    Reset()
+
+Score
+    Points (Int)
+
+    Add Points()
+
+Cycle
+    Segments (List)
+
+    Get Segments()
+    Move Next()
+    Get Head()
+    Grow Tail()
+    Turn Head()
+    Prepare Body()
+
+Action
+    Execute()
+
+Control Actors Action
+    Keyboard Service (Keyboard Service)
+    Direction (Point)
+
+    Execute()
+
+Draw Actors Action
+    Video Service (Video Service)
+
+Handle Collisions Action
+
+Move Actors Action
+
+Script
+
+Keyboard Service
+
+Video Service
+
+Colour
+
+Point
