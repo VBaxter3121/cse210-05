@@ -1,5 +1,3 @@
-INCOMPLETE
-
 Director
     Video Service (Video Service)
 
@@ -34,9 +32,10 @@ Cast
     Get First Actor()
     Remove Actor()
 
-Replay
+Setup
+    First Time (Bool)
 
-    Reset()
+    Replay()
 
 Score
     Points (Int)
@@ -66,15 +65,61 @@ Draw Actors Action
     Video Service (Video Service)
 
 Handle Collisions Action
+    Is Game Over (Bool)
+    Player 1 Win (Bool)
+    Player 2 Win (Bool)
+    Keyboard Service (Keyboard Service)
+    Setup (setup)
+
+    Execute()
+    Handle Segment Collision()
+    Handle Game Over()
 
 Move Actors Action
 
+    Execute()
+
 Script
+    Actions (Dictionary)
+
+    Add Action()
+    Get Actions()
+    Remove Actions()
 
 Keyboard Service
+    Keys (Dictionary)
+
+    Is Key Up()
+    Is Key Down()
 
 Video Service
+    Debug (Bool)
+
+    Close Window()
+    Clear Buffer()
+    Draw Actor()
+    Draw Actors()
+    Flush Buffer()
+    Is Window Open()
+    Open Window()
+    Draw Grid()
+    Get X Offset()
 
 Colour
+    Red (Int)
+    Green (Int)
+    Blue (Int)
+    Alpha (Int)
+
+    To Tuple()
 
 Point
+    X (Int)
+    Y (Int)
+
+    Add()
+    Reverse()
+    Get X()
+    Get Y()
+    Reverse()
+    Scale()

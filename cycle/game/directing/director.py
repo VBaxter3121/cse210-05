@@ -27,15 +27,6 @@ class Director:
             self._execute_actions("input", cast, script)
             self._execute_actions("update", cast, script)
             self._execute_actions("output", cast, script)
-            # # debugging show velocity
-            # cycle1 = cast.get_first_actor("cycles")
-            # segments = cycle1.get_segments()
-            # head = segments[0]
-            # velocity = head.get_velocity()
-            # x = velocity.get_x()
-            # y = velocity.get_y()
-            # score = cast.get_first_actor("scores")
-            # score.set_text(f"{x}, {y}")
         self._video_service.close_window()
 
     def _execute_actions(self, group, cast, script):

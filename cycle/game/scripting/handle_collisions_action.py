@@ -7,8 +7,8 @@ class HandleCollisionsAction(Action):
     """
     An update action that handles interactions between the actors.
     
-    The responsibility of HandleCollisionsAction is to handle the situation when the snake collides
-    with the food, or the snake collides with its segments, or the game is over.
+    The responsibility of HandleCollisionsAction is to handle the situation when a cycle collides
+    with either its own train, or its opponents trail, or when the game is over.
 
     Attributes:
         _is_game_over (boolean): Whether or not the game is over.
@@ -39,25 +39,8 @@ class HandleCollisionsAction(Action):
                 self._player1_win = False
                 self._player2_win = False
 
-    # def _handle_food_collision(self, cast):
-    #     """Updates the score nd moves the food if the snake collides with the food.
-        
-    #     Args:
-    #         cast (Cast): The cast of Actors in the game.
-    #     """
-    #     score = cast.get_first_actor("scores")
-    #     food = cast.get_first_actor("foods")
-    #     snake = cast.get_first_actor("snakes")
-    #     head = snake.get_head()
-
-    #     if head.get_position().equals(food.get_position()):
-    #         points = food.get_points()
-    #         snake.grow_tail(points)
-    #         score.add_points(points)
-    #         food.reset()
-
     def _handle_segment_collision(self, cast):
-        """Sets the game over flag if the snake collides with one of its segments.
+        """Sets the game over flag if a cycle collides with either trail.
         
         Args:
             cast (Cast): The cast of Actors in the game.
@@ -79,7 +62,7 @@ class HandleCollisionsAction(Action):
                 self._is_game_over = True
         
     def _handle_game_over(self, cast):
-        """Shows the 'game over' message and turns the snake and food white if the game is over.
+        """Shows the 'game over' message and turns the cycles and their trails white if the game is over.
         
         Args:
             cast (Cast): The cast of Actors in the game.
@@ -89,14 +72,12 @@ class HandleCollisionsAction(Action):
             segments = cycles[0].get_segments()
             segments2 = cycles[1].get_segments()
             segments = segments + segments2
-            # food = cast.get_first_actor("foods")
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x, y)
 
             message = Actor()
-            scores = cast.get_actors("scores")
             if self._player1_win == True:
                 message.set_text("Player 1 Wins! Press 'R' to play again")
                 constants.PLAYER1_SCORE += 1
@@ -110,6 +91,5 @@ class HandleCollisionsAction(Action):
                 segment.set_color(constants.WHITE)
 
     def is_game_over(self):
-        """
-        """
+        """Returns a true or false value based on whether the game is over."""
         return self._is_game_over

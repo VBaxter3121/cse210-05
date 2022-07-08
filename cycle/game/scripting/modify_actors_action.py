@@ -2,11 +2,17 @@ from game.scripting.action import Action
 
 class ModifyActorsAction(Action):
     """
-    """
+    An update action that modifies actors over time.
+    
+    The responsability of ModifyActorsAction is to grow the length of each
+    cycle's trail at a consistent rate.
+    
+    Attributes:
+        _counter (int): An iterating, self-resetting value used as a timer.
+        _is_game_over (bool): The state of the game, whether over or not."""
 
     def __init__(self):
-        """
-        """
+        """Contructs a new ModifyActorsAction instance."""
         self._counter = 0
         self._is_game_over = False
 

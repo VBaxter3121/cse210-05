@@ -47,9 +47,9 @@ class Cycle(Actor):
             segment.set_velocity(velocity)
             segment.set_text("#")
             if self._player == "player1":
-                segment.set_color(constants.YELLOW)
+                segment.set_color(constants.BLUE)
             elif self._player == "player2":
-                segment.set_color(constants.GREEN)
+                segment.set_color(constants.RED)
             self._segments.append(segment)
 
     def turn_head(self, velocity):
@@ -75,11 +75,11 @@ class Cycle(Actor):
         if self._player == "player1":
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 4)
-            color = constants.YELLOW
+            color = constants.BLUE
         elif self._player == "player2":
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y - constants.MAX_Y / 4)
-            color = constants.GREEN
+            color = constants.RED
 
         for i in range(constants.CYCLE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
